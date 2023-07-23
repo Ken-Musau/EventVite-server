@@ -30,6 +30,18 @@ class ApplicationController < Sinatra::Base
     host.to_json
   end
 
+  patch "/events/:id" do
+    event = Event.find(params[:id])
+    event.update(
+      title: params[:title],
+      description: params[:description],
+      date: params[:date],
+      time: params[:time],
+      venue: params[:venue],
+    )
+    event.to_json
+  end
+
   delete "/events/:id" do
     event = Event.find(params[:id])
     event.destroy
