@@ -1,3 +1,7 @@
+puts "deleting all seeds"
+Host.destroy_all
+Event.destroy_all
+
 puts "🌱 Seeding spices..."
 
 # Seed your database here
@@ -10,6 +14,7 @@ event1 = Event.create(
   description: "At the age of 9, Dominic Ongwen is abducted by the Ugandan LRA",
   venue: "Nairobi cinema",
   price: 650,
+  time: "1800hrs",
   image_url: "./assets/tov.jpg",
   date: "14th Jan 2023",
   host_id: host1.id,
@@ -20,8 +25,9 @@ event2 = Event.create(
   description: "Our Mini Mornings give smaller kids the chance to experience",
   venue: "Kitengela",
   price: 650,
-  image_url: "./assets/tov.jpg",
+  image_url: "./assets/um.jpg",
   date: "14th Jan 2023",
+  time: "1800hrs",
   host_id: host2.id,
 )
 
@@ -30,8 +36,9 @@ event3 = Event.create(
   description: "Clash of Shujaa will be a live music event featuring Black Metal band:",
   venue: "westlands",
   price: 650,
-  image_url: "./assets/tov.jpg",
+  image_url: "./assets/cos.jpg",
   date: "14th Jan 2023",
+  time: "1800hrs",
   host_id: host1.id,
 )
 
@@ -40,8 +47,9 @@ event4 = Event.create(
   description: "The forum explores and promotes the digitization of Micro, Small, and Medium Enterprises (MSMEs) in Kenya.",
   venue: "Nairobi garage",
   price: 650,
-  image_url: "./assets/tov.jpg",
+  image_url: "./assets/digitization.jpg",
   date: "14th Jan 2023",
+  time: "1800hrs",
   host_id: host3.id,
 )
 
@@ -50,8 +58,9 @@ event5 = Event.create(
   description: "At the age of 9, Dominic Ongwen is abducted by the Ugandan LRA",
   venue: "Nairobi cinema",
   price: 650,
-  image_url: "./assets/tov.jpg",
+  image_url: "./assets/collective.jpg",
   date: "14th Jan 2023",
+  time: "1800hrs",
   host_id: host2.id,
 )
 event6 = Event.create(
@@ -59,8 +68,9 @@ event6 = Event.create(
   description: "Clash of Shujaa will be a live music event featuring Black Metal band:",
   venue: "Nairobi cinema",
   price: 650,
-  image_url: "./assets/tov.jpg",
+  image_url: "./assets/ck.jpg",
   date: "14th Jan 2023",
+  time: "1800hrs",
   host_id: host1.id,
 )
 
