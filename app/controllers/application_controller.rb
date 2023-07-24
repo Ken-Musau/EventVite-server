@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/events/:id" do
-    events = Event.where(host_id: params[:id])
+    events = Event.where(host_id: params[:id]).order(id: :desc)
     events.to_json
   end
 
@@ -38,6 +38,8 @@ class ApplicationController < Sinatra::Base
       date: params[:date],
       time: params[:time],
       venue: params[:venue],
+      price: params[:price],
+      host_id: params[:host_id],
     )
     event.to_json
   end
@@ -50,6 +52,7 @@ class ApplicationController < Sinatra::Base
       date: params[:date],
       time: params[:time],
       venue: params[:venue],
+
     )
     event.to_json
   end
