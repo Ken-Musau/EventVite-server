@@ -17,4 +17,13 @@ class ApplicationController < Sinatra::Base
     events = Event.where(host_id: params[:id]).order(id: :desc)
     events.to_json
   end
+
+  post "/hosts" do
+    host = Host.create(
+      name: params[:name],
+      email: params[:email],
+      password: params[:password],
+    )
+    host.to_json
+  end
 end
