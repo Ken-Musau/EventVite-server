@@ -26,4 +26,18 @@ class ApplicationController < Sinatra::Base
     )
     host.to_json
   end
+
+  post "/events" do
+    event = Event.create(
+      title: params[:title],
+      description: params[:description],
+      image_url: params[:image_url],
+      date: params[:date],
+      time: params[:time],
+      venue: params[:venue],
+      price: params[:price],
+      host_id: params[:host_id],
+    )
+    event.to_json
+  end
 end
