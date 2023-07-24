@@ -7,4 +7,9 @@ class ApplicationController < Sinatra::Base
     hosts = Host.all
     hosts.to_json
   end
+
+  get "/events" do
+    events = Event.all
+    events.to_json
+  end
 end
