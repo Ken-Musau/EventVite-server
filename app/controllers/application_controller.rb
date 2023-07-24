@@ -12,4 +12,9 @@ class ApplicationController < Sinatra::Base
     events = Event.all
     events.to_json
   end
+
+  get "/events/:id" do
+    events = Event.where(host_id: params[:id]).order(id: :desc)
+    events.to_json
+  end
 end
