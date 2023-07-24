@@ -3,4 +3,8 @@ class ApplicationController < Sinatra::Base
 
   # Add your routes here
 
+  get "/hosts" do
+    hosts = Host.all
+    hosts.to_json
+  end
 end
