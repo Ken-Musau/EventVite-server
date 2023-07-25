@@ -1,6 +1,6 @@
 # Event-VitE Backend
 
-Event-VitE Backend is the server-side component of the Event-VitE Admin Dashboard web application. It provides the necessary API endpoints to handle event and host data using a PostgreSQL database.
+Event-VitE Backend is the server-side component of the Event-VitE Admin Dashboard web application. It provides the necessary API endpoints to handle event and host data using a PostgreSQL database. Find link to the Front End https://event-vite-client.vercel.app/
 
 ## Technologies Used
 
