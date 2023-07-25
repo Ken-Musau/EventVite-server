@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: db/development.PostgreSQL
 
 test:
   <<: *default
@@ -13,4 +13,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: db/production.PostgreSQL
