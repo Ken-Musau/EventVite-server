@@ -5,17 +5,17 @@ class ApplicationController < Sinatra::Base
 
   get "/hosts" do
     hosts = Host.all
-    json_response(hosts)
+    hosts.to_json
   end
 
   get "/events" do
     events = Event.all
-    json_response(events)
+    events.to_json
   end
 
   get "/events/:id" do
     events = Event.where(host_id: params[:id]).order(id: :desc)
-    json_response(events)
+    events.to_json
   end
 
   post "/hosts" do
@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
       email: params[:email],
       password: params[:password],
     )
-    json_response(host)
+    host.to_json
   end
 
   post "/events" do
@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
       price: params[:price],
       host_id: params[:host_id],
     )
-    json_response(event)
+    event.to_json
   end
   patch "/events/:id" do
     event = Event.find(params[:id])
@@ -50,18 +50,12 @@ class ApplicationController < Sinatra::Base
       venue: params[:venue],
 
     )
-    json_response(event)
+    event.to_json
   end
 
   delete "/events/:id" do
     event = Event.find(params[:id])
     event.destroy
-    json_response(event)
-  end
-
-  private
-
-  def json_response(data)
-    data.to_json
+    event.to_json
   end
 end
